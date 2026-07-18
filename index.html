@@ -1,12 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEDINEP · Guías del Programa Danza — Universidad del Atlántico</title>
+<title>Guía de Danza para Bailarines · Yanny Manotas — CEDINEP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+   GOOGLE ANALYTICS 4 (GA4) — MÉTRICAS DE IMPACTO
+  ------------------------------------------------------------
+   1) Crea una propiedad GA4 en https://analytics.google.com
+      y copia tu "ID de medición" (tiene el formato G-XXXXXXXXXX).
+   2) Reemplaza LAS DOS apariciones de "G-XXXXXXXXXX" abajo por
+      tu ID real (una está en el "src" del script, la otra en
+      la llamada gtag('config', ...)).
+
+   Con esto ya queda registrado automáticamente:
+   - El total de visitas a la página (evento "page_view",
+     visible en GA4 en Informes > Interacción > Páginas y
+     pantallas).
+   - Un evento personalizado "view_guide" cada vez que alguien
+     hace clic en "Abrir Guía Interactiva", con el nombre de la
+     guía (evento configurado más abajo en el <script> principal,
+     dentro de la función openGuide()). Podrás verlo en GA4 en
+     Informes > Interacción > Eventos, y desglosarlo por el
+     parámetro "guide_title" para saber cuántas visitas tiene
+     cada guía por separado.
+  ============================================================
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GVXS6CFJG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5GVXS6CFJG');
+</script>
 
 <style>
   :root{
@@ -652,7 +682,7 @@
 -->
 <nav>
   <div class="wrap nav-inner">
-    <div class="nav-wordmark">CEDINEP<span>Programa Danza</span></div>
+    <div class="nav-wordmark">Guía de Danza<span>para bailarines</span></div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
       <a href="#catalogo">Catálogo de guías</a>
@@ -666,29 +696,38 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Publicación semestral de investigación</span>
-      <h1>Guía Danza del <em>Programa Danza</em><br>para la comunidad académica</h1>
+      <h1>Guía de Danza<br><em>para Bailarines</em></h1>
       <p class="lede">
-        Bienvenidos al espacio editorial del grupo de investigación <strong>CEDINEP</strong>, adscrito a la Facultad
-        de Bellas Artes de la Universidad del Atlántico y desarrollado activamente desde el Semillero
-        <strong>CREANDO</strong> y el <strong>Programa Danza</strong>.
+        Bienvenidos a Guía-Danza, una biblioteca viva y un espacio de consulta especializada dedicado al
+        desarrollo del entrenamiento consciente. Este portal, en constante evolución, nace como una
+        plataforma de transferencia de conocimiento orientada a democratizar el acceso a herramientas
+        conceptuales y prácticas, consolidando los resultados de una rigurosa labor investigativa
+        desarrollada desde la academia.
       </p>
       <p class="lede">
-        Este portal nace como una biblioteca viva y en constante evolución. Cada semestre, reunimos y publicamos
-        aquí las guías técnicas, metodológicas y pedagógicas resultantes de nuestra labor investigativa dentro de
-        la academia. Nuestro propósito es democratizar el acceso al conocimiento especializado a través de un
-        material diseñado rigurosamente para estudiantes, docentes, investigadores e intérpretes que buscan
-        comprender el movimiento humano con profunda conciencia, cuidado y excelencia técnica.
+        A través de dos publicaciones anuales, este espacio ha sido diseñado meticulosamente para
+        estudiantes, docentes, investigadores e intérpretes de la danza. Nuestro propósito es ofrecer un
+        soporte riguroso para quienes buscan comprender el movimiento humano desde una perspectiva
+        integral, donde confluyen la profunda conciencia corporal, el cuidado de la salud del bailarín y la
+        excelencia técnica.
       </p>
       <p class="lede">
-        En cada entrega semestral, la comunidad encontrará protocolos de práctica basados en la anatomía funcional,
-        análisis técnicos del movimiento e ilustraciones explicativas creadas bajo rigurosa supervisión artística
-        para acompañar de forma segura el proceso formativo. Te invitamos a explorar, estudiar y habitar estas
-        páginas, pensadas para que la danza se siga pensando, entrenando y transformando desde adentro.
+        En cada entrega semestral, la comunidad dancística encontrará protocolos de práctica fundamentados
+        en la anatomía funcional y la biomecánica, acompañados de análisis técnicos detallados e
+        ilustraciones explicativas desarrolladas bajo una estricta supervisión artística. Estas guías
+        técnicas, metodológicas y pedagógicas están pensadas para mitigar riesgos de lesiones y enriquecer
+        los procesos pedagógicos en el aula.
+      </p>
+      <p class="lede">
+        Te invitamos a explorar, estudiar y habitar estas páginas; un entorno digital creado para que la
+        danza se siga pensando, entrenando y transformando de manera consciente desde adentro.
       </p>
       <p class="colophon">
-        Este espacio digital ha sido concebido y estructurado por la docente <strong>Yanny Manotas</strong> y
-        generado mediante el uso de Inteligencia Artificial bajo su estricta supervisión pedagógica, técnica y
-        artística.
+        Esta plataforma es una producción intelectual de <strong>Yanny Manotas</strong>, docente del Programa de
+        Danza e investigadora integrante del grupo de investigación <strong>CEDINEP</strong>, adscrito a la
+        Facultad de Bellas Artes y la Facultad de Ciencias de la Educación de la Universidad del Atlántico.
+        Concebida y estructurada por la docente, y generada mediante el uso de Inteligencia Artificial bajo
+        su estricta supervisión pedagógica, técnica y artística.
       </p>
       <div class="hero-meta">
         <div>
@@ -723,7 +762,7 @@
              alt="Estudio de biomecánica de la danza: ilustración técnica de una bailarina en quinta posición con planos anatómicos, ejes de movimiento y musculatura señalados">
         <div class="diagram-caption">
           <span>Estudio de biomecánica de la danza</span>
-          <strong>Programa Danza — CEDINEP</strong>
+          <strong>Yanny Manotas — CEDINEP</strong>
         </div>
       </div>
     </div>
@@ -752,7 +791,7 @@
       <div class="value-card">
         <span class="mark">Investig.</span>
         <h3>Base investigativa</h3>
-        <p>Cada guía documenta su fundamento metodológico dentro de las líneas de investigación de CEDINEP y el Semillero CREANDO.</p>
+        <p>Cada guía documenta su fundamento metodológico dentro de las líneas de investigación del grupo CEDINEP.</p>
       </div>
     </div>
   </div>
@@ -788,7 +827,7 @@
       <div class="volume-body">
         <span class="volume-tag">Biomecánica del movimiento</span>
         <h3>Guía para mejorar el Turn Out</h3>
-        <p class="author">Por <strong>Yanny Manotas Rincón</strong> — CEDINEP, Semillero CREANDO</p>
+        <p class="author">Por <strong>Yanny Manotas</strong> — Grupo de Investigación CEDINEP</p>
         <p class="desc">
           Una guía práctica y técnica sobre la rotación externa de cadera en danza: cómo evaluarla con criterio
           anatómico, cómo trabajarla de forma progresiva y segura, y qué errores comunes evitar en el proceso
@@ -799,7 +838,7 @@
           <div><strong>Lectura</strong>Interactiva</div>
           <div><strong>Grupo</strong>CEDINEP</div>
         </div>
-        <button class="cta-btn" id="openGuideBtn">
+        <button class="cta-btn" id="openGuideBtn" data-guide-id="vol-1-turn-out" data-guide-title="Vol. I — Guía para mejorar el Turn Out">
           Abrir Guía Interactiva
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M13 5l7 7-7 7"/>
@@ -822,11 +861,10 @@
       ============================================================
        LOGOS INSTITUCIONALES — movidos aquí desde la barra superior
       ------------------------------------------------------------
-       Estos son los mismos 4 espacios de antes, en el mismo orden:
+       Estos son los mismos espacios de antes, en el mismo orden:
        1) Universidad del Atlántico
        2) Facultad de Bellas Artes
        3) CEDINEP
-       4) CREANDO
 
        Si necesitas actualizar alguna imagen, cambia el "src" del
        <img> correspondiente dentro de cada <div class="logo-slot">.
@@ -850,25 +888,20 @@
           <img src="https://lh3.googleusercontent.com/d/1vksKpMA3UTkL80-caJWMr3bdXEfvKccH" alt="Logo Cedinep">
         </div>
         <!-- ▲ FIN logo Cedinep -->
-
-        <!-- ▼ Logo de CREANDO -->
-        <div class="logo-slot">
-          <img src="https://lh3.googleusercontent.com/d/1Ozj-fnrO8lSW2SWGQBuHvHeaqv2e32Z8" alt="Logo Creando">
-        </div>
-        <!-- ▲ FIN logo Creando -->
       </div>
     </div>
     <!-- FIN de los logos institucionales -->
 
     <div class="footer-inner">
       <div>
-        <span class="brand-mark display" style="font-size:18px;">CEDINEP</span>
-        <div class="brand-sub">Grupo de Investigación · Semillero CREANDO</div>
+        <span class="brand-mark display" style="font-size:18px;">Guía de Danza</span>
+        <div class="brand-sub">para bailarines</div>
       </div>
       <p>
-        Facultad de Bellas Artes — <strong>Programa Danza</strong>, Universidad del Atlántico. Contenido técnico y
-        pedagógico creado por la docente <strong>Yanny Manotas</strong> (Grupo de Investigación CEDINEP / Semillero
-        CREANDO). Contenido de uso académico. Todos los derechos reservados a sus autores.
+        Guía de Danza para Bailarines es una producción intelectual de <strong>Yanny Manotas</strong>, docente
+        del Programa de Danza e investigadora integrante del grupo de investigación <strong>CEDINEP</strong>,
+        adscrito a la Facultad de Bellas Artes y la Facultad de Ciencias de la Educación de la Universidad del
+        Atlántico. Contenido de uso académico. Todos los derechos reservados a sus autores.
       </p>
     </div>
   </div>
@@ -958,6 +991,23 @@
     }
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    /* ------------------------------------------------------
+       MÉTRICA POR GUÍA (GA4)
+       ------------------------------------------------------
+       Cada vez que se abre una guía, se envía un evento
+       "view_guide" con su id y título (tomados de los
+       atributos data-guide-id / data-guide-title del botón
+       que la abrió). Cuando agregues el Vol. II, III, etc.,
+       solo pon esos mismos atributos en su propio botón y
+       quedará registrado por separado automáticamente.
+    ------------------------------------------------------ */
+    if (typeof gtag === 'function'){
+      gtag('event', 'view_guide', {
+        guide_id: openBtn.dataset.guideId || 'sin-id',
+        guide_title: openBtn.dataset.guideTitle || 'sin-título'
+      });
+    }
   }
 
   function closeGuide(){
