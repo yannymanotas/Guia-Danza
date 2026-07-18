@@ -1,0 +1,1004 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEDINEP · Guías del Programa Danza — Universidad del Atlántico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#FBF7F1;
+    --cream-soft:#F3ECE1;
+    --cream-deep:#ECE3D4;
+    --ink:#35363A;
+    --ink-soft:#6E7075;
+    --ink-faint:#95979C;
+    --indigo:#5C5B8A;
+    --indigo-dark:#48476B;
+    --indigo-soft:#8B89B8;
+    --line:rgba(53,54,58,0.13);
+    --shadow: 0 30px 60px -30px rgba(53,54,58,0.22);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  ::selection{background:var(--indigo-soft); color:#FFFFFF;}
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    padding:18px 0;
+    background:rgba(251,247,241,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+  }
+  .nav-wordmark{
+    font-family:'Fraunces', serif;
+    font-size:15px;
+    letter-spacing:0.02em;
+    color:var(--ink);
+  }
+  .nav-wordmark span{
+    color:var(--ink-faint);
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-left:8px;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:34px;
+    font-size:13px;
+    letter-spacing:0.04em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink);
+    opacity:0.72;
+    transition:opacity .25s ease;
+  }
+  .nav-links a:hover{opacity:1;}
+
+  /* ---------- LOGO SLOTS (ahora usados en el footer) ---------- */
+  .logo-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .logo-slot{
+    height:38px;
+    padding:0 6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+  }
+  .logo-slot--wide{padding:0 6px;}
+  .logo-placeholder-text{
+    font-size:10.5px;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .logo-slot img{
+    max-height:30px;
+    max-width:140px;
+    display:block;
+    object-fit:contain;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:130px;
+    padding-bottom:80px;
+    background:
+      radial-gradient(circle at 84% 16%, rgba(92,91,138,0.10), transparent 45%),
+      radial-gradient(circle at 8% 88%, rgba(139,137,184,0.14), transparent 50%),
+      var(--cream);
+    overflow:hidden;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--indigo-dark);
+    margin-bottom:26px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px;height:1px;
+    background:var(--indigo);
+    display:inline-block;
+  }
+
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px);
+    line-height:1.06;
+    max-width:640px;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--indigo);
+    font-weight:400;
+  }
+
+  .hero p.lede{
+    font-size:17px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin-top:28px;
+  }
+  .hero p.lede strong{color:var(--ink); font-weight:600;}
+
+  .hero p.colophon{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:13.5px;
+    line-height:1.7;
+    color:var(--ink-faint);
+    max-width:500px;
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .hero p.colophon strong{
+    font-style:normal;
+    color:var(--indigo-dark);
+    font-weight:500;
+  }
+
+  .hero-meta{
+    display:flex;
+    gap:40px;
+    margin-top:48px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{
+    border-left:1px solid var(--line);
+    padding-left:16px;
+  }
+  .hero-meta .num{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    color:var(--ink);
+  }
+  .hero-meta .lbl{
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-top:4px;
+  }
+
+  /* ---- Imagen de introducción ---- */
+  .diagram-holder{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .diagram-card{
+    background:#ffffff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px;
+    width:100%;
+    max-width:420px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .hero-image{
+    display:block;
+    max-width:100%;
+    max-height:380px;
+    object-fit:contain;
+    border-radius:6px;
+    margin:0 auto;
+  }
+  .diagram-caption{
+    display:flex;
+    justify-content:space-between;
+    margin-top:16px;
+    padding:0 6px 4px;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .diagram-caption strong{color:var(--indigo-dark); font-weight:600;}
+
+  /* ---------- VALUE / ABOUT SECTION ---------- */
+  section.about{
+    background:var(--cream-soft);
+    padding:120px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about-head{
+    max-width:640px;
+    margin-bottom:70px;
+  }
+  .about-head .eyebrow{margin-bottom:20px;}
+  .about-head h2{
+    font-size:clamp(28px,3.4vw,40px);
+    line-height:1.18;
+    color:var(--ink);
+  }
+
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .value-card{
+    background:var(--cream-soft);
+    padding:38px 34px;
+  }
+  .value-card .mark{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--indigo);
+    font-size:15px;
+    margin-bottom:20px;
+    display:block;
+  }
+  .value-card h3{
+    font-size:19px;
+    margin-bottom:12px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .value-card p{
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- CATALOG SECTION ---------- */
+  section.catalog{
+    padding:130px 0 150px;
+    background:var(--cream);
+  }
+  .catalog-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:60px;
+    flex-wrap:wrap;
+    gap:24px;
+  }
+  .catalog-head h2{
+    font-size:clamp(30px,3.6vw,44px);
+    color:var(--ink);
+  }
+  .catalog-head p{
+    max-width:400px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+
+  .volume-card{
+    display:grid;
+    grid-template-columns: 340px 1fr;
+    background:#ffffff;
+    color:var(--ink);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+
+  .volume-visual{
+    position:relative;
+    overflow:hidden;
+    background:#282734;
+  }
+  .volume-visual::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(20,19,26,0.55) 0%, rgba(20,19,26,0.05) 45%, rgba(20,19,26,0.15) 100%);
+    z-index:1;
+  }
+  .volume-cover{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .volume-roman{
+    position:absolute;
+    top:24px; left:28px;
+    z-index:2;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:0.08em;
+    color:rgba(251,247,241,0.7);
+  }
+
+  .volume-body{
+    padding:48px 52px;
+    display:flex;
+    flex-direction:column;
+  }
+  .volume-tag{
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--indigo-dark);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .volume-body h3{
+    font-size:clamp(24px,2.6vw,32px);
+    line-height:1.15;
+    margin-bottom:16px;
+    color:var(--ink);
+  }
+  .volume-body .author{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .volume-body .author strong{color:var(--ink);}
+
+  .volume-body p.desc{
+    font-size:14.5px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin-bottom:30px;
+  }
+
+  .volume-facts{
+    display:flex;
+    gap:28px;
+    margin-bottom:34px;
+    flex-wrap:wrap;
+  }
+  .volume-facts div{
+    font-size:12px;
+    color:var(--ink-faint);
+  }
+  .volume-facts strong{
+    display:block;
+    color:var(--ink);
+    font-family:'Fraunces', serif;
+    font-size:15px;
+    margin-bottom:2px;
+  }
+
+  .cta-btn{
+    appearance:none;
+    border:none;
+    cursor:pointer;
+    background:var(--indigo);
+    color:#FFFDFA;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.02em;
+    padding:18px 30px;
+    border-radius:6px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    width:fit-content;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+    box-shadow:0 14px 30px -14px rgba(92,91,138,0.55);
+  }
+  .cta-btn:hover{
+    background:var(--indigo-dark);
+    transform:translateY(-2px);
+  }
+  .cta-btn svg{width:16px;height:16px;}
+
+  .coming-next{
+    margin-top:38px;
+    padding:20px 26px;
+    border:1px dashed var(--line);
+    border-radius:6px;
+    font-size:13px;
+    color:var(--ink-soft);
+    background:var(--cream-soft);
+  }
+  .coming-next strong{color:var(--indigo-dark);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:60px 0 44px;
+    border-top:1px solid var(--line);
+    background:var(--cream);
+  }
+  .footer-logos{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    padding-bottom:36px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--line);
+  }
+  .footer-logos-label{
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    white-space:nowrap;
+    margin-right:10px;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  footer .brand-mark{color:var(--ink);}
+  footer .brand-sub{
+    margin-top:6px;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--indigo-dark);
+  }
+  footer p{
+    font-size:12.5px;
+    color:var(--ink-faint);
+    max-width:460px;
+    line-height:1.75;
+  }
+  footer p strong{color:var(--ink-soft); font-weight:600;}
+
+  /* ---------- MODAL (simulated reading window) ---------- */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:rgba(40,39,52,0.55);
+    backdrop-filter:blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .modal-overlay.active{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .modal-window{
+    width:min(94vw, 1200px);
+    height:min(90vh, 820px);
+    background:#2B2A35;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 40px 90px -20px rgba(0,0,0,0.45);
+    transform:translateY(24px) scale(0.98);
+    transition:transform .35s ease;
+  }
+  .modal-overlay.active .modal-window{
+    transform:translateY(0) scale(1);
+  }
+
+  .modal-titlebar{
+    height:52px;
+    background:#221F2B;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    flex-shrink:0;
+  }
+  .fake-dots{display:flex; gap:8px;}
+  .fake-dots span{
+    width:11px;height:11px;border-radius:50%;
+    background:#4F4C5F;
+  }
+  .modal-title{
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    color:#D2D0DA;
+    letter-spacing:0.03em;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .modal-title .dot-live{
+    width:6px;height:6px;border-radius:50%;
+    background:#8B89B8;
+  }
+  .modal-close{
+    background:none;
+    border:none;
+    color:#D2D0DA;
+    font-size:20px;
+    cursor:pointer;
+    width:34px; height:34px;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s ease;
+  }
+  .modal-close:hover{background:rgba(255,255,255,0.08);}
+
+  .modal-frame-holder{
+    flex:1;
+    background:#19171F;
+    position:relative;
+  }
+  .modal-frame-holder iframe{
+    width:100%; height:100%;
+    border:none;
+  }
+
+  /* ---------- PROTECTION TOAST ---------- */
+  #protectToast{
+    position:fixed;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:var(--cream);
+    padding:14px 22px;
+    border-radius:6px;
+    font-size:13px;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease, transform .3s ease;
+    z-index:2000;
+    box-shadow:0 20px 40px -14px rgba(53,54,58,0.4);
+  }
+  #protectToast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+  #protectToast svg{width:15px;height:15px; color:var(--indigo-soft); flex-shrink:0;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .diagram-holder{order:-1;}
+    .value-grid{grid-template-columns:1fr;}
+    .volume-card{grid-template-columns:1fr;}
+    .volume-visual{padding:30px; min-height:220px;}
+    .volume-body{padding:34px 28px;}
+    .nav-links{display:none;}
+    .wrap{padding:0 22px;}
+    .footer-logos{justify-content:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<!--
+  Los logos institucionales se movieron al pie de página (footer),
+  en la sección "Créditos institucionales", para que el inicio del
+  sitio luzca más limpio y el título principal destaque de inmediato.
+-->
+<nav>
+  <div class="wrap nav-inner">
+    <div class="nav-wordmark">CEDINEP<span>Programa Danza</span></div>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo de guías</a>
+      <a href="#pie">Créditos</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO / INTRODUCCIÓN ================= -->
+<header class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Publicación semestral de investigación</span>
+      <h1>Guía Danza del <em>Programa Danza</em><br>para la comunidad académica</h1>
+      <p class="lede">
+        Bienvenidos al espacio editorial del grupo de investigación <strong>CEDINEP</strong>, adscrito a la Facultad
+        de Bellas Artes de la Universidad del Atlántico y desarrollado activamente desde el Semillero
+        <strong>CREANDO</strong> y el <strong>Programa Danza</strong>.
+      </p>
+      <p class="lede">
+        Este portal nace como una biblioteca viva y en constante evolución. Cada semestre, reunimos y publicamos
+        aquí las guías técnicas, metodológicas y pedagógicas resultantes de nuestra labor investigativa dentro de
+        la academia. Nuestro propósito es democratizar el acceso al conocimiento especializado a través de un
+        material diseñado rigurosamente para estudiantes, docentes, investigadores e intérpretes que buscan
+        comprender el movimiento humano con profunda conciencia, cuidado y excelencia técnica.
+      </p>
+      <p class="lede">
+        En cada entrega semestral, la comunidad encontrará protocolos de práctica basados en la anatomía funcional,
+        análisis técnicos del movimiento e ilustraciones explicativas creadas bajo rigurosa supervisión artística
+        para acompañar de forma segura el proceso formativo. Te invitamos a explorar, estudiar y habitar estas
+        páginas, pensadas para que la danza se siga pensando, entrenando y transformando desde adentro.
+      </p>
+      <p class="colophon">
+        Este espacio digital ha sido concebido y estructurado por la docente <strong>Yanny Manotas</strong> y
+        generado mediante el uso de Inteligencia Artificial bajo su estricta supervisión pedagógica, técnica y
+        artística.
+      </p>
+      <div class="hero-meta">
+        <div>
+          <div class="num">Vol. I</div>
+          <div class="lbl">Publicación disponible</div>
+        </div>
+        <div>
+          <div class="num">2</div>
+          <div class="lbl">Ediciones al año</div>
+        </div>
+        <div>
+          <div class="num">CEDINEP</div>
+          <div class="lbl">Grupo de investigación</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diagram-holder">
+      <div class="diagram-card">
+        <!--
+          ============================================================
+           IMAGEN DE INTRODUCCIÓN
+          ------------------------------------------------------------
+           Enlace directo de Google Drive con tu ilustración final del
+           estudio de biomecánica de la danza. Si en algún momento
+           reemplazas la imagen en Drive, solo actualiza el ID en esta
+           misma URL (la parte después de "/d/").
+          ============================================================
+        -->
+        <img class="hero-image"
+             src="https://lh3.googleusercontent.com/d/1Ms-tYViVGqice-WFRpwSlgiZ8g0I2bIF"
+             alt="Estudio de biomecánica de la danza: ilustración técnica de una bailarina en quinta posición con planos anatómicos, ejes de movimiento y musculatura señalados">
+        <div class="diagram-caption">
+          <span>Estudio de biomecánica de la danza</span>
+          <strong>Programa Danza — CEDINEP</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= VALOR / QUÉ ENCONTRARÁS ================= -->
+<section class="about">
+  <div class="wrap">
+    <div class="about-head">
+      <span class="eyebrow">Qué encontrarás aquí</span>
+      <h2>Material técnico pensado para acompañar la práctica, no solo para leerla.</h2>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="mark">Fig.</span>
+        <h3>Ilustraciones técnicas</h3>
+        <p>Diagramas propios de anatomía aplicada al movimiento, ángulos articulares y ejes corporales, elaborados desde el trabajo de campo del semillero.</p>
+      </div>
+      <div class="value-card">
+        <span class="mark">Guía</span>
+        <h3>Protocolos de práctica</h3>
+        <p>Secuencias progresivas y ejercicios validados en proceso pedagógico, con criterios claros de seguridad para el cuerpo del bailarín.</p>
+      </div>
+      <div class="value-card">
+        <span class="mark">Investig.</span>
+        <h3>Base investigativa</h3>
+        <p>Cada guía documenta su fundamento metodológico dentro de las líneas de investigación de CEDINEP y el Semillero CREANDO.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATÁLOGO ================= -->
+<section class="catalog" id="catalogo">
+  <div class="wrap">
+    <div class="catalog-head">
+      <div>
+        <span class="eyebrow">Catálogo de guías</span>
+        <h2>Publicaciones del semestre</h2>
+      </div>
+      <p>Cada volumen recoge una línea específica de trabajo del grupo de investigación, con acceso a lectura interactiva completa.</p>
+    </div>
+
+    <div class="volume-card">
+      <div class="volume-visual">
+        <span class="volume-roman">Vol. I</span>
+        <!--
+          ============================================================
+           PORTADA DE LA GUÍA (Vol. I — Turn Out)
+          ------------------------------------------------------------
+           Enlace directo de Google Drive con la portada real del PDF.
+           Si más adelante cambias la portada en Drive, solo actualiza
+           el ID en esta URL (la parte después de "/d/").
+          ============================================================
+        -->
+        <img class="volume-cover"
+             src="https://lh3.googleusercontent.com/d/1CG5hXumg7U59gKJkY_lomEAeryteRbrM"
+             alt="Portada de la guía: Guía para mejorar el Turn Out">
+      </div>
+      <div class="volume-body">
+        <span class="volume-tag">Biomecánica del movimiento</span>
+        <h3>Guía para mejorar el Turn Out</h3>
+        <p class="author">Por <strong>Yanny Manotas Rincón</strong> — CEDINEP, Semillero CREANDO</p>
+        <p class="desc">
+          Una guía práctica y técnica sobre la rotación externa de cadera en danza: cómo evaluarla con criterio
+          anatómico, cómo trabajarla de forma progresiva y segura, y qué errores comunes evitar en el proceso
+          formativo del bailarín.
+        </p>
+        <div class="volume-facts">
+          <div><strong>Vol. I</strong>Edición actual</div>
+          <div><strong>Lectura</strong>Interactiva</div>
+          <div><strong>Grupo</strong>CEDINEP</div>
+        </div>
+        <button class="cta-btn" id="openGuideBtn">
+          Abrir Guía Interactiva
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <div class="coming-next">
+          <strong>Próxima edición —</strong> el Vol. II se publicará el próximo semestre con una nueva línea de investigación del grupo.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="pie">
+  <div class="wrap">
+
+    <!--
+      ============================================================
+       LOGOS INSTITUCIONALES — movidos aquí desde la barra superior
+      ------------------------------------------------------------
+       Estos son los mismos 4 espacios de antes, en el mismo orden:
+       1) Universidad del Atlántico
+       2) Facultad de Bellas Artes
+       3) CEDINEP
+       4) CREANDO
+
+       Si necesitas actualizar alguna imagen, cambia el "src" del
+       <img> correspondiente dentro de cada <div class="logo-slot">.
+      ============================================================
+    -->
+    <div class="footer-logos">
+      <span class="footer-logos-label">Créditos institucionales</span>
+      <div class="logo-row">
+        <div class="logo-slot logo-slot--wide">
+          <img src="https://lh3.googleusercontent.com/d/1tBYzwmSIzKYtC3lhdLCoaEt6RDLRvlcU" alt="Logo Universidad del Atlántico">
+        </div>
+
+        <!-- ▼ Logo de la Facultad de Bellas Artes -->
+        <div class="logo-slot">
+          <img src="https://lh3.googleusercontent.com/d/1CngYE7Wx8nSEFzHCRr3iN87LlsTrgn1e" alt="Logo Bellas Artes">
+        </div>
+        <!-- ▲ FIN logo Bellas Artes -->
+
+        <!-- ▼ Logo de CEDINEP -->
+        <div class="logo-slot">
+          <img src="https://lh3.googleusercontent.com/d/1vksKpMA3UTkL80-caJWMr3bdXEfvKccH" alt="Logo Cedinep">
+        </div>
+        <!-- ▲ FIN logo Cedinep -->
+
+        <!-- ▼ Logo de CREANDO -->
+        <div class="logo-slot">
+          <img src="https://lh3.googleusercontent.com/d/1Ozj-fnrO8lSW2SWGQBuHvHeaqv2e32Z8" alt="Logo Creando">
+        </div>
+        <!-- ▲ FIN logo Creando -->
+      </div>
+    </div>
+    <!-- FIN de los logos institucionales -->
+
+    <div class="footer-inner">
+      <div>
+        <span class="brand-mark display" style="font-size:18px;">CEDINEP</span>
+        <div class="brand-sub">Grupo de Investigación · Semillero CREANDO</div>
+      </div>
+      <p>
+        Facultad de Bellas Artes — <strong>Programa Danza</strong>, Universidad del Atlántico. Contenido técnico y
+        pedagógico creado por la docente <strong>Yanny Manotas</strong> (Grupo de Investigación CEDINEP / Semillero
+        CREANDO). Contenido de uso académico. Todos los derechos reservados a sus autores.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL: VENTANA DE LECTURA ================= -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-window">
+    <div class="modal-titlebar">
+      <div class="fake-dots"><span></span><span></span><span></span></div>
+      <div class="modal-title"><span class="dot-live"></span> Guía Interactiva — Vol. I · Turn Out</div>
+      <button class="modal-close" id="closeModalBtn" aria-label="Cerrar">×</button>
+    </div>
+    <div class="modal-frame-holder">
+      <!--
+        ============================================================
+         AQUÍ VA TU ENLACE DE LA GUÍA (Heyzine o Google Drive)
+        ============================================================
+         1) Sube tu PDF a Heyzine (heyzine.com) y copia el enlace del
+            visor, algo como:
+              https://heyzine.com/flip-book/xxxxxxxxx.html
+
+         2) O, si usas Google Drive:
+            - Sube el PDF a Drive.
+            - Clic derecho > Compartir > "Cualquier persona con el enlace".
+            - Copia el ID del archivo desde la URL de Drive
+              (la parte entre /d/ y /view).
+            - Usa este formato de enlace para que se vea embebido:
+              https://drive.google.com/file/d/TU_ID_DE_ARCHIVO/preview
+
+         El enlace ya está configurado más abajo en GUIDE_URL.
+        ============================================================
+      -->
+      <iframe id="guideIframe" title="Guía Interactiva Vol. I - Turn Out" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ================= AVISO DE PROTECCIÓN ================= -->
+<div id="protectToast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+  </svg>
+  <span>Contenido protegido por derechos de autor</span>
+</div>
+
+<script>
+  const GUIDE_URL = "https://heyzine.com/flip-book/ce3920b125.html";
+
+  const PLACEHOLDER_HTML = `
+    <html>
+      <head>
+        <style>
+          body{
+            margin:0; height:100vh; display:flex; align-items:center; justify-content:center;
+            background:#28262f; color:#f3ece1; font-family:Inter,Arial,sans-serif; text-align:center;
+          }
+          .box{ max-width:440px; padding:30px; }
+          h2{ font-family:Georgia,serif; font-weight:400; font-size:22px; margin-bottom:12px; color:#9C9AC7; }
+          p{ font-size:13.5px; line-height:1.7; color:#d2d0da; }
+          code{ background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-size:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="box">
+          <h2>Vista previa de la guía</h2>
+          <p>Este espacio mostrará el visor real del PDF/Flipbook.<br>
+          Reemplaza <code>GUIDE_URL</code> en el código con tu enlace
+          de Heyzine o Google Drive para activar la lectura interactiva.</p>
+        </div>
+      </body>
+    </html>
+  `;
+
+  const overlay   = document.getElementById('modalOverlay');
+  const openBtn   = document.getElementById('openGuideBtn');
+  const closeBtn  = document.getElementById('closeModalBtn');
+  const iframe    = document.getElementById('guideIframe');
+
+  function openGuide(){
+    if (GUIDE_URL && GUIDE_URL.indexOf('PEGA_AQUI') === -1){
+      iframe.removeAttribute('srcdoc');
+      iframe.src = GUIDE_URL;
+    } else {
+      iframe.removeAttribute('src');
+      iframe.srcdoc = PLACEHOLDER_HTML;
+    }
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGuide(){
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openGuide);
+  closeBtn.addEventListener('click', closeGuide);
+  overlay.addEventListener('click', (e)=>{
+    if(e.target === overlay) closeGuide();
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeGuide();
+  });
+
+  const toast = document.getElementById('protectToast');
+  let toastTimer;
+  function showProtectToast(){
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> toast.classList.remove('show'), 2600);
+  }
+
+  document.addEventListener('contextmenu', (e)=>{
+    e.preventDefault();
+    showProtectToast();
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    const isPrintCombo = (e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P');
+    if(isPrintCombo){
+      e.preventDefault();
+      showProtectToast();
+    }
+  });
+
+  window.addEventListener('beforeprint', (e)=>{
+    showProtectToast();
+  });
+</script>
+
+</body>
+</html>
