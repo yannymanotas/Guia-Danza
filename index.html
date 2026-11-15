@@ -486,6 +486,8 @@
   }
   .cta-btn svg{width:16px;height:16px;}
 
+  .volume-card + .volume-card{margin-top:40px;}
+
   .coming-next{
     margin-top:38px;
     padding:20px 26px;
@@ -731,8 +733,8 @@
       </p>
       <div class="hero-meta">
         <div>
-          <div class="num">Vol. I</div>
-          <div class="lbl">Publicación disponible</div>
+          <div class="num">Vol. II</div>
+          <div class="lbl">Última publicación</div>
         </div>
         <div>
           <div class="num">2</div>
@@ -808,6 +810,57 @@
       <p>Cada volumen recoge una línea específica de trabajo del grupo de investigación, con acceso a lectura interactiva completa.</p>
     </div>
 
+    <!-- ============================================================
+         VOLUMEN II — Ejes, gravedad y transferencias de peso
+         (para agregar un Vol. III, copia una tarjeta completa
+          <div class="volume-card">…</div> y cambia portada, textos
+          y los atributos data-guide-* de su botón)
+         ============================================================ -->
+    <div class="volume-card">
+      <div class="volume-visual">
+        <span class="volume-roman">Vol. II</span>
+        <!--
+          PORTADA DEL VOL. II — enlace directo de Google Drive.
+          Si cambias la portada en Drive, solo actualiza el ID
+          (la parte después de "/d/").
+        -->
+        <img class="volume-cover"
+             src="https://lh3.googleusercontent.com/d/1m2MUCwaBkGcpwzL5brYFBlBWYo8zYfit"
+             alt="Portada de la guía: Guía Danza. Volumen II: Ejes, gravedad y transferencias de peso">
+      </div>
+      <div class="volume-body">
+        <span class="volume-tag">Biomecánica y somática del tránsito corporal</span>
+        <h3>Ejes, gravedad y transferencias de peso</h3>
+        <p class="author">Por <strong>Yanny Manotas</strong> — Grupo de Investigación CEDINEP</p>
+        <p class="desc">
+          Guía pedagógica de apoyo para la formación en danza que integra principios de biomecánica y
+          educación somática.
+        </p>
+        <div class="volume-facts">
+          <div><strong>Vol. II</strong>Segunda edición</div>
+          <div><strong>Lectura</strong>Interactiva</div>
+          <div><strong>Grupo</strong>CEDINEP</div>
+        </div>
+        <!--
+          ENLACE DEL FLIPBOOK DEL VOL. II: está en data-guide-url.
+          Los atributos data-guide-id y data-guide-title alimentan el
+          evento "view_guide" de Google Analytics (visitas por guía).
+        -->
+        <button class="cta-btn js-open-guide"
+                data-guide-id="vol-2-ejes-gravedad-transferencias-de-peso"
+                data-guide-title="Vol. II — Ejes, gravedad y transferencias de peso"
+                data-guide-url="https://heyzine.com/flip-book/3f1e777f01.html">
+          Abrir Guía Interactiva
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         VOLUMEN I — Guía para mejorar el Turn Out
+         ============================================================ -->
     <div class="volume-card">
       <div class="volume-visual">
         <span class="volume-roman">Vol. I</span>
@@ -834,21 +887,24 @@
           formativo del bailarín.
         </p>
         <div class="volume-facts">
-          <div><strong>Vol. I</strong>Edición actual</div>
+          <div><strong>Vol. I</strong>Primera edición</div>
           <div><strong>Lectura</strong>Interactiva</div>
           <div><strong>Grupo</strong>CEDINEP</div>
         </div>
-        <button class="cta-btn" id="openGuideBtn" data-guide-id="vol-1-turn-out" data-guide-title="Vol. I — Guía para mejorar el Turn Out">
+        <button class="cta-btn js-open-guide"
+                data-guide-id="vol-1-turn-out"
+                data-guide-title="Vol. I — Guía para mejorar el Turn Out"
+                data-guide-url="https://heyzine.com/flip-book/ce3920b125.html">
           Abrir Guía Interactiva
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M13 5l7 7-7 7"/>
           </svg>
         </button>
-
-        <div class="coming-next">
-          <strong>Próxima edición —</strong> el Vol. II se publicará el próximo semestre con una nueva línea de investigación del grupo.
-        </div>
       </div>
+    </div>
+
+    <div class="coming-next">
+      <strong>Próxima edición —</strong> el siguiente volumen se publicará el próximo semestre con una nueva línea de investigación del grupo.
     </div>
   </div>
 </section>
@@ -912,7 +968,7 @@
   <div class="modal-window">
     <div class="modal-titlebar">
       <div class="fake-dots"><span></span><span></span><span></span></div>
-      <div class="modal-title"><span class="dot-live"></span> Guía Interactiva — Vol. I · Turn Out</div>
+      <div class="modal-title"><span class="dot-live"></span> <span id="modalTitleText">Guía Interactiva</span></div>
       <button class="modal-close" id="closeModalBtn" aria-label="Cerrar">×</button>
     </div>
     <div class="modal-frame-holder">
@@ -932,10 +988,13 @@
             - Usa este formato de enlace para que se vea embebido:
               https://drive.google.com/file/d/TU_ID_DE_ARCHIVO/preview
 
-         El enlace ya está configurado más abajo en GUIDE_URL.
+         Cada guía tiene su propio enlace: está en el atributo
+         data-guide-url del botón "Abrir Guía Interactiva" de su
+         tarjeta (en la sección "Publicaciones del semestre").
+         Este visor se llena solo con el enlace del botón que se pulse.
         ============================================================
       -->
-      <iframe id="guideIframe" title="Guía Interactiva Vol. I - Turn Out" allowfullscreen></iframe>
+      <iframe id="guideIframe" title="Guía Interactiva" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -949,7 +1008,8 @@
 </div>
 
 <script>
-  const GUIDE_URL = "https://heyzine.com/flip-book/ce3920b125.html";
+  /* Los enlaces de cada guía ya no viven aquí: están en el atributo
+     data-guide-url de cada botón "Abrir Guía Interactiva". */
 
   const PLACEHOLDER_HTML = `
     <html>
@@ -969,26 +1029,32 @@
         <div class="box">
           <h2>Vista previa de la guía</h2>
           <p>Este espacio mostrará el visor real del PDF/Flipbook.<br>
-          Reemplaza <code>GUIDE_URL</code> en el código con tu enlace
-          de Heyzine o Google Drive para activar la lectura interactiva.</p>
+          Pon tu enlace de Heyzine o Google Drive en el atributo
+          <code>data-guide-url</code> del botón para activar la lectura interactiva.</p>
         </div>
       </body>
     </html>
   `;
 
   const overlay   = document.getElementById('modalOverlay');
-  const openBtn   = document.getElementById('openGuideBtn');
+  const openBtns  = document.querySelectorAll('.js-open-guide');
   const closeBtn  = document.getElementById('closeModalBtn');
   const iframe    = document.getElementById('guideIframe');
+  const modalTitleText = document.getElementById('modalTitleText');
 
-  function openGuide(){
-    if (GUIDE_URL && GUIDE_URL.indexOf('PEGA_AQUI') === -1){
+  function openGuide(btn){
+    const url = btn.dataset.guideUrl;
+    const title = btn.dataset.guideTitle || 'Guía';
+
+    if (url && url.indexOf('PEGA_AQUI') === -1){
       iframe.removeAttribute('srcdoc');
-      iframe.src = GUIDE_URL;
+      iframe.src = url;
     } else {
       iframe.removeAttribute('src');
       iframe.srcdoc = PLACEHOLDER_HTML;
     }
+    modalTitleText.textContent = 'Guía Interactiva — ' + title;
+    iframe.title = 'Guía Interactiva ' + title;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
@@ -998,14 +1064,14 @@
        Cada vez que se abre una guía, se envía un evento
        "view_guide" con su id y título (tomados de los
        atributos data-guide-id / data-guide-title del botón
-       que la abrió). Cuando agregues el Vol. II, III, etc.,
-       solo pon esos mismos atributos en su propio botón y
-       quedará registrado por separado automáticamente.
+       que la abrió). Cuando agregues el Vol. III, etc., solo
+       pon esos mismos atributos en su propio botón y quedará
+       registrado por separado automáticamente.
     ------------------------------------------------------ */
     if (typeof gtag === 'function'){
       gtag('event', 'view_guide', {
-        guide_id: openBtn.dataset.guideId || 'sin-id',
-        guide_title: openBtn.dataset.guideTitle || 'sin-título'
+        guide_id: btn.dataset.guideId || 'sin-id',
+        guide_title: btn.dataset.guideTitle || 'sin-título'
       });
     }
   }
@@ -1015,7 +1081,9 @@
     document.body.style.overflow = '';
   }
 
-  openBtn.addEventListener('click', openGuide);
+  openBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){ openGuide(btn); });
+  });
   closeBtn.addEventListener('click', closeGuide);
   overlay.addEventListener('click', (e)=>{
     if(e.target === overlay) closeGuide();
